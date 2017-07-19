@@ -1,2 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+.to_do {
+  border: solid thin black;
+}
+
+.to_do_text {
+  border: solid thin black;
+  height: 200px;
+}
