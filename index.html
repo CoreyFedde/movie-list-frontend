@@ -71,31 +71,44 @@
 </nav>
       <!-- end of navbar -->
       <!-- Start of to-do-list -->
-        <div class="container">
-          <div class="row">
-            <div id="tempText" class="col-xs-3 side-bar">
-            </div>
-            <div class="col-xs-9">
-              <div class="row">
-                <div class="to_do col-xs-4 col-xs-offset-4 text-center">To-do List</div>
-              </div>
-              <div class="row">
-                <div id="toDoList" class="to_do_text col-xs-4 col-xs-offset-4">
-                  <ul>
-                    <li>Text</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="to_do col-xs-3 col-xs-offset-3 text-center">
-                  <input id='toDoInput' type="text">
-                  <button id='addTextButton'>button</button>
-                </div>
-              </div>
-            </div>
+<div class="container">
+  <div class="row">
+    <div id="tempText" class="col-xs-3 side-bar">
+      <div class="btn-group-vertical" role="group" aria-label="...">
+        <button id="createButton" class="btn btn-default">Create</button>
+        <button id="deleteButton" class="btn btn-default">Destroy</button>
+        <button id="getListsButton" class="btn btn-default">Get All</button>
+        <button id="getOneListButton" class="btn btn-default">Get One</button>
+        <form id="apiTitleForm">
+          <div class="form-group">
+            <label for="InputTitle">Change Title</label>
+            <input type="text" class="form-control" placeholder="New Title">
           </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="row">
+        <div class="to_do col-xs-4 col-xs-offset-4 text-center">To-do List</div>
+      </div>
+      <div class="row">
+        <div id="toDoList" class="to_do_text col-xs-4 col-xs-offset-4">
+          <ul>
+            <li>Text</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="to_do col-xs-3 col-xs-offset-3 text-center">
+          <input id='toDoInput' type="text">
+          <button id='addTextButton'>button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
           <!-- End of to-do list -->
           <!-- footer start -->

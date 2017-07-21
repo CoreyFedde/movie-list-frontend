@@ -3,27 +3,32 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 // const getFormFields = require('../../lib/get-form-fields.js')
-const api = require('./ajax/api.js')
+const user = require('./api/user.js')
+const api = require('./api/api-interactions.js')
 
 $(() => {
   setAPIOrigin(location, config)
-  $('#signUpForm').on('submit', api.onSignUp)
-  $('#signInForm').on('submit', api.onLogIn)
-  $('#changePasswordForm').on('submit', api.onChangePassword)
-  $('#signOutButton').on('click', api.onLogOut)
+  $('#signUpForm').on('submit', user.onSignUp)
+  $('#signInForm').on('submit', user.onLogIn)
+  $('#changePasswordForm').on('submit', user.onChangePassword)
+  $('#signOutButton').on('click', user.onLogOut)
+  $('#createButton').on('click', api.createNewList)
+  $('#getListsButton').on('click', api.onGetLists)
+  $('#getOneListButton').on('click', api.onGetOneList)
+  $('#deleteButton').on('click', api.onDeleteList)
 })
 
 // let testF = function (arg) {
 //   $(arg.target).text('ok')
 // }
 
-$('#toDoInput').bind("enterKey", function(e){
-  console.log('enter')
-})
+// $('#toDoInput').bind("enterKey", function(e){
+//   console.log('enter')
+// })
 
-$('#addTextButton').on("click", function () {
+$('#addTextButton').on('click', function () {
   if ($('#toDoInput').val() !== '') {
-    let toDoItem = $('#toDoInput').val()
+    const toDoItem = $('#toDoInput').val()
     $('#toDoList').append(`<li> ${toDoItem} </li>`)
     $('#toDoInput').val('')
   }
