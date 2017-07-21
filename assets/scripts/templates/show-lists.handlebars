@@ -1,11 +1,14 @@
 {{#each lists as |list|}}
 
-  <h2 data-id="{{list.id}}"> {{list.name}}</h2>
-  <ul class="list-{{list.id}}">
-  <li>
-    {{list.titles}}
-  </li>
-  <li class="book-info"><button class="hide-button">Remove</button></li>
-</ul>
+      <div class="list col-xs-2">
+        <h5 data-id="{{list.id}}"> {{list.name}} </h5>
+        <hr>
+        <ul class="list-{{list.id}}">
+          <li>
+            {{list.titles}}
+          </li>
+            <li class="book-info"><button class="hide-button">Remove</button></li>
+        </ul>
+      </div>
 
 {{/each}}
