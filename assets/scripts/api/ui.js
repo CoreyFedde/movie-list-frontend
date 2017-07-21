@@ -4,7 +4,7 @@ const listsTemplate = require('../templates/show-lists.handlebars')
 
 const getListsSuccess = (data) => {
   console.log(data)
-  let listsHTML = listsTemplate({ lists: data.title })
+  let listsHTML = listsTemplate({ lists: data.lists })
   $('#list-content').append(listsHTML)
 }
 
