@@ -18,7 +18,8 @@ const newList = function () {
     },
     data: {
       'list': {
-        'title': 'New List From Button2'
+        'name': 'Movie_list_1',
+        'titles': 'Rush Hour, Example2, Rush Hour 3, etc'
       }
     }
   })
