@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const config = require('../config.js')
+const ui = require('./ui.js')
 
 // const gameStatus = {
 //   over: false
@@ -17,7 +18,7 @@ const newList = function () {
     },
     data: {
       'list': {
-        'title': 'New List From Button'
+        'title': 'New List From Button2'
       }
     }
   })
@@ -66,12 +67,8 @@ const deleteList = function () {
 
 const onGetLists = function (event) {
   getLists()
-  .then(function (data) {
-    console.log('k')
-    console.log('Work! also here is data: ', data)
-  })
-  .catch(function (data) {
-  })
+  .then(ui.getListsSuccess)
+  .catch(ui.failure)
 }
 
 const onGetOneList = function (event) {
