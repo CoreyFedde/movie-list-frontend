@@ -17,7 +17,6 @@ $(() => {
   $('#apiAddMovieForm').on('submit', interactions.onGetMovies)
   $('#getListsButton').on('click', interactions.onGetMovies)
   $('#getOneListButton').on('click', interactions.onGetOneMovie)
-  $('#deleteButton').on('click', interactions.onDeleteMovie)
   $('#changePasswordButton').hide()
   $('#logOutButton').hide()
   $('#removeAllButton').on('click', ui.clear)

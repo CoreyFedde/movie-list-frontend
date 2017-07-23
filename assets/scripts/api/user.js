@@ -61,6 +61,7 @@ const onSignUp = function (event) {
         store.user = data.user
         ui.onLogInSuccess()
         interactions.onGetMovies()
+        $('#deleteButton').on('click', interactions.onDeleteMovie)
       })
       .catch(ui.failure)
     })
