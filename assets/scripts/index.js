@@ -14,7 +14,7 @@ $(() => {
   $('#signOutButton').on('click', user.onLogOut)
   $('#apiAddMovieForm').on('submit', api.createNewMovie)
   $('#apiAddMovieForm').on('submit', api.onGetMovies)
-  // $('#getListsButton').on('click', api.onGetMovies)
+  $('#getListsButton').on('click', api.onGetMovies)
   $('#getOneListButton').on('click', api.onGetOneMovie)
   $('#deleteButton').on('click', api.onDeleteMovie)
 })

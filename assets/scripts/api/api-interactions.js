@@ -67,16 +67,16 @@ const deleteMovie = function () {
   })
 }
 
-// const gameUpdates = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + store.game.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const movieUpdate = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/movies/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 const onGetMovies = function (event) {
   getMovies()
@@ -86,12 +86,8 @@ const onGetMovies = function (event) {
 
 const onGetOneMovie = function (event) {
   getOneMovie()
-  .then(function (data) {
-    console.log('k')
-    console.log('Work! also here is data: ', data)
-  })
-  .catch(function (data) {
-  })
+  .then(ui.onGetOneMovieSuccess)
+  .catch(ui.failure)
 }
 
 const createNewMovie = function (event) {
@@ -106,50 +102,30 @@ const createNewMovie = function (event) {
   // console.log('this is data before newMovie runs: ', data)
   newMovie(data)
     .then(function (data) {
-      console.log('this is data: ', data)
-      // console.log('ending console logs from createNewMovie')
       store.movie = data.movie
+      ui.createNewMovieSuccess()
     })
-    .catch(function (data) {
-      console.log('createNewMovie did not work')
-      console.log('this is data: ', data)
-      // console.log('ending console logs from createNewMovie')
-    })
+    .catch(ui.failure)
 }
 
 const onDeleteMovie = function (event) {
   deleteMovie()
-    // .then(function () {
-    //   console.log('Delete success')
-    // })
-    // .else(function () {
-    //   console.log('Delete not successful')
-    // })
+    .then(ui.onDeleteMovieSuccess)
+    .catch(ui.failure)
 }
 
-// const getGameUpdates = function () {
-//   event.preventDefault()
-//   const currIndex = $('.game').index(event.target)
-//   const newValue = $(event.target).text()
-//   const data = {
-//     'game': {
-//       'cell': {
-//         'index': currIndex,
-//         'value': newValue
-//       },
-//       'over': gameStatus.over
-//     }
-//   }
-//   gameUpdates(data)
-//     .then(function (data) {
-//     })
-//     .catch(function (data) {
-//     })
-// }
+const onMovieUpdate = function () {
+  event.preventDefault()
+  const data = getFormFields(this)
+  movieUpdate(data)
+    .then(ui.onMovieUpdateSuccess)
+    .catch(ui.failure)
+}
 
 module.exports = {
   createNewMovie,
   onGetMovies,
   onGetOneMovie,
-  onDeleteMovie
+  onDeleteMovie,
+  onMovieUpdate
 }
