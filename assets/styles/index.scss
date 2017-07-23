@@ -16,9 +16,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .create-list-box{
   border: solid thin black;
-  height: 40px;
-  vertical-align: middle;
   padding-top: 5px;
+}
+.btn-group-horizontal{
+  padding: 5px;
 }
 
 .poster-board{

@@ -11,12 +11,14 @@ $(() => {
   $('#signUpForm').on('submit', user.onSignUp)
   $('#signInForm').on('submit', user.onLogIn)
   $('#changePasswordForm').on('submit', user.onChangePassword)
-  $('#signOutButton').on('click', user.onLogOut)
+  $('#logOutButton').on('click', user.onLogOut)
   $('#apiAddMovieForm').on('submit', api.createNewMovie)
   $('#apiAddMovieForm').on('submit', api.onGetMovies)
   $('#getListsButton').on('click', api.onGetMovies)
   $('#getOneListButton').on('click', api.onGetOneMovie)
   $('#deleteButton').on('click', api.onDeleteMovie)
+  $('#changePasswordButton').hide()
+  $('#logOutButton').hide()
 })
 
 $('document').on('click', '.poster-board', function (event) {

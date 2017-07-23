@@ -3,6 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store.js')
 const config = require('../config.js')
 const ui = require('./ui.js')
+const interactions = require('./api-interactions.js')
 // API
 const signUp = function (data) {
   return $.ajax({
@@ -47,7 +48,22 @@ const onSignUp = function (event) {
   console.log(event.target)
   console.log(data)
   signUp(data)
-    .then(ui.onSignUpSuccess)
+    .then(function (response) {
+      ui.onSignUpSuccess
+      const authData = {
+        credentials: {
+          email: data.credentials.email,
+          password: data.credentials.password
+        }
+      }
+      signIn(authData)
+      .then(function (data) {
+        store.user = data.user
+        ui.onLogInSuccess()
+        interactions.onGetMovies()
+      })
+      .catch(ui.failure)
+    })
     .catch(ui.failure)
 }
 
@@ -61,6 +77,7 @@ const onLogIn = function (event) {
   .then(function (data) {
     store.user = data.user
     ui.onLogInSuccess()
+    interactions.onGetMovies()
     // $('#tempText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
   .catch(ui.failure)

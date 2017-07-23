@@ -9,6 +9,8 @@ const getMoviesSuccess = (data) => {
 }
 const onGetOneMovieSuccess = (data) => {
   console.log('Successful onGetOneMovie')
+  const moviesHTML = moviesTemplate({ movies: data.movies })
+  $('.poster-board').prepend(moviesHTML)
 }
 const createNewMovieSuccess = (data) => {
   console.log('Successful onCreateNewMovie')
@@ -21,15 +23,27 @@ const onDeleteMovieSuccess = (data) => {
 }
 const onSignUpSuccess = (data) => {
   console.log('Successful onSignUp')
+  $('#signUpModal').modal('hide')
 }
 const onLogInSuccess = (data) => {
   console.log('Successful onLogIn')
+  $('#signInModal').modal('hide')
+  $('#signUpModal').modal('hide')
+  $('#signInButton').hide()
+  $('#signUpButton').hide()
+  $('#changePasswordButton').show()
+  $('#logOutButton').show()
 }
 const onChangePasswordSuccess = (data) => {
   console.log('Successful onChangePassword')
+  $('#changePasswordModal').modal('hide')
 }
 const onLogOutSuccess = (data) => {
   console.log('Successful onLogOut')
+  $('#signInButton').show()
+  $('#signUpButton').show()
+  $('#changePasswordButton').hide()
+  $('#logOutButton').hide()
 }
 
 const failure = (error) => {
