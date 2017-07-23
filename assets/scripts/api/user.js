@@ -3,7 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store.js')
 const config = require('../config.js')
 const ui = require('./ui.js')
-const interactions = require('./api-interactions.js')
+const interactions = require('./interactions.js')
 // API
 const signUp = function (data) {
   return $.ajax({

@@ -1,6 +1,8 @@
 'use strict'
 
+const api = require('./api.js')
 const moviesTemplate = require('../templates/show-movies.handlebars')
+const store = require('../store.js')
 
 const getMoviesSuccess = (data) => {
   console.log(data)
@@ -13,6 +15,7 @@ const onGetOneMovieSuccess = (data) => {
   $('.poster-board').prepend(moviesHTML)
 }
 const createNewMovieSuccess = (data) => {
+  store.movie = data.movie
   console.log('Successful onCreateNewMovie')
 }
 const onMovieUpdateSuccess = (data) => {
@@ -50,6 +53,10 @@ const failure = (error) => {
   console.error(error)
 }
 
+const clear = function () {
+  $('#board').empty()
+}
+
 module.exports = {
   getMoviesSuccess,
   onGetOneMovieSuccess,
@@ -60,5 +67,6 @@ module.exports = {
   onLogInSuccess,
   onChangePasswordSuccess,
   onLogOutSuccess,
-  failure
+  failure,
+  clear
 }

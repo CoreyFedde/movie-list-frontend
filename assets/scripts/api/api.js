@@ -1,8 +1,6 @@
 'use strict'
 const store = require('../store.js')
 const config = require('../config.js')
-const ui = require('./ui.js')
-const getFormFields = require('../../../lib/get-form-fields.js')
 
 // const gameStatus = {
 //   over: false
@@ -49,7 +47,7 @@ const getMovies = function () {
 
 const getOneMovie = function () {
   return $.ajax({
-    url: config.apiOrigin + '/movies/' + 5,
+    url: config.apiOrigin + '/movies/' + 22,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -59,7 +57,7 @@ const getOneMovie = function () {
 
 const deleteMovie = function () {
   return $.ajax({
-    url: config.apiOrigin + '/movies/' + 5,
+    url: config.apiOrigin + '/movies/' + 22,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -78,54 +76,10 @@ const movieUpdate = function (data) {
   })
 }
 
-const onGetMovies = function (event) {
-  getMovies()
-  .then(ui.getMoviesSuccess)
-  .catch(ui.failure)
-}
-
-const onGetOneMovie = function (event) {
-  getOneMovie()
-  .then(ui.onGetOneMovieSuccess)
-  .catch(ui.failure)
-}
-
-const createNewMovie = function (event) {
-  event.preventDefault()
-  // console.log('starting console logs from createNewMovie')
-  // console.log('this is store.user: ', store.user)
-  // console.log('this is getFormFields(event.target): ', getFormFields(event.target))
-  // console.log('this is getFormFields(this): ', getFormFields(this))
-  const data = getFormFields(this)
-  // console.log('this is event: ', event)
-  // console.log('this is event.target: ', event.target)
-  // console.log('this is data before newMovie runs: ', data)
-  newMovie(data)
-    .then(function (data) {
-      store.movie = data.movie
-      ui.createNewMovieSuccess()
-    })
-    .catch(ui.failure)
-}
-
-const onDeleteMovie = function (event) {
-  deleteMovie()
-    .then(ui.onDeleteMovieSuccess)
-    .catch(ui.failure)
-}
-
-const onMovieUpdate = function () {
-  event.preventDefault()
-  const data = getFormFields(this)
-  movieUpdate(data)
-    .then(ui.onMovieUpdateSuccess)
-    .catch(ui.failure)
-}
-
 module.exports = {
-  createNewMovie,
-  onGetMovies,
-  onGetOneMovie,
-  onDeleteMovie,
-  onMovieUpdate
+  newMovie,
+  getMovies,
+  getOneMovie,
+  deleteMovie,
+  movieUpdate
 }
