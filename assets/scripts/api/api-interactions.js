@@ -2,6 +2,7 @@
 const store = require('../store.js')
 const config = require('../config.js')
 const ui = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields.js')
 
 // const gameStatus = {
 //   over: false
@@ -9,25 +10,36 @@ const ui = require('./ui.js')
 
 // WILL NEED TO SET TITLE TO A VAR
 
-const newList = function () {
+// const newMovie = function () {
+//   return $.ajax({
+//     url: config.apiOrigin + '/movies/',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: {
+//       'movie': {
+//         'title': 'Rush Hour',
+//         'notes': 'always great'
+//       }
+//     }
+//   })
+// }
+
+const newMovie = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/lists/',
+    url: config.apiOrigin + '/movies/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'list': {
-        'name': 'Movie_list_1',
-        'titles': 'Rush Hour, Example2, Rush Hour 3, etc'
-      }
-    }
+    data
   })
 }
 
-const getLists = function () {
+const getMovies = function () {
   return $.ajax({
-    url: config.apiOrigin + '/lists/',
+    url: config.apiOrigin + '/movies/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -35,9 +47,9 @@ const getLists = function () {
   })
 }
 
-const getOneList = function () {
+const getOneMovie = function () {
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + 5,
+    url: config.apiOrigin + '/movies/' + 5,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -45,9 +57,9 @@ const getOneList = function () {
   })
 }
 
-const deleteList = function () {
+const deleteMovie = function () {
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + 5,
+    url: config.apiOrigin + '/movies/' + 5,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -66,14 +78,14 @@ const deleteList = function () {
 //   })
 // }
 
-const onGetLists = function (event) {
-  getLists()
-  .then(ui.getListsSuccess)
+const onGetMovies = function (event) {
+  getMovies()
+  .then(ui.getMoviesSuccess)
   .catch(ui.failure)
 }
 
-const onGetOneList = function (event) {
-  getOneList()
+const onGetOneMovie = function (event) {
+  getOneMovie()
   .then(function (data) {
     console.log('k')
     console.log('Work! also here is data: ', data)
@@ -82,21 +94,31 @@ const onGetOneList = function (event) {
   })
 }
 
-const createNewList = function (event) {
+const createNewMovie = function (event) {
+  event.preventDefault()
+  console.log('starting console logs from createNewMovie')
   console.log('this is store.user: ', store.user)
-  newList()
+  console.log('this is getFormFields(event.target): ', getFormFields(event.target))
+  console.log('this is getFormFields(this): ', getFormFields(this))
+  let data = getFormFields(this)
+  console.log('this is event: ', event)
+  console.log('this is event.target: ', event.target)
+  console.log('this is data before newMovie runs: ', data)
+  newMovie(data)
     .then(function (data) {
       console.log('this is data: ', data)
-      store.list = data.list
+      console.log('ending console logs from createNewMovie')
+      store.movie = data.movie
     })
     .catch(function (data) {
-      console.log('createNewList did not work')
+      console.log('createNewMovie did not work')
       console.log('this is data: ', data)
+      console.log('ending console logs from createNewMovie')
     })
 }
 
-const onDeleteList = function (event) {
-  deleteList()
+const onDeleteMovie = function (event) {
+  deleteMovie()
     // .then(function () {
     //   console.log('Delete success')
     // })
@@ -126,8 +148,8 @@ const onDeleteList = function (event) {
 // }
 
 module.exports = {
-  createNewList,
-  onGetLists,
-  onGetOneList,
-  onDeleteList
+  createNewMovie,
+  onGetMovies,
+  onGetOneMovie,
+  onDeleteMovie
 }

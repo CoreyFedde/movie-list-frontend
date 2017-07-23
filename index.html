@@ -51,14 +51,24 @@
       <!-- start of test -->
 <div class="container">
   <div class="row">
-    <div class="create-list-box col-xs-offset-4 col-xs-4 text-center">
-      <input id='toDoInput' type="text">
-      <button id='addTextButton'>button</button>
+    <div class="create-list-box col-xs-12 text-center">
+      <form id="apiAddMovieForm">
+          <input name="credentials[title]" id='toDoInput' type="text">
+          <input name="credentials[notes]" id='#2' type="text">
+          <button type="submit" id='createButton' class="btn btn-default">Add</button>
+        </form>
+      <div class="btn-group-horizontal" role="group" aria-label="...">
+      <button id='removeAllButton' class="btn btn-default">Clear</button>
+      <button id='#' class="btn btn-default">What to watch right now</button>
+      <button id='getOneListButton' class="btn btn-default">Get one</button>
+      <button id="deleteButton" class="btn btn-default">Destroy</button>
+      <button id="getListsButton" class="btn btn-default">Get All</button>
+      </div>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="poster-board row">
+  <div id="board" class="poster-board row">
   </div>
 </div>
       <!-- end of test -->
@@ -67,10 +77,10 @@
   <div class="row">
     <div id="tempText" class="col-xs-3 side-bar">
       <div class="btn-group-vertical" role="group" aria-label="...">
-        <button id="createButton" class="btn btn-default">Create</button>
-        <button id="deleteButton" class="btn btn-default">Destroy</button>
-        <button id="getListsButton" class="btn btn-default">Get All</button>
-        <button id="getOneListButton" class="btn btn-default">Get One</button>
+        <!-- <button id="createButton" class="btn btn-default">Create</button> -->
+        <!-- <button id="deleteButton" class="btn btn-default">Destroy</button> -->
+        <!-- <button id="getListsButton" class="btn btn-default">Get All</button> -->
+        <!-- <button id="getOneListButton" class="btn btn-default">Get One</button> -->
         <form id="apiTitleForm">
           <div class="form-group">
             <label for="InputTitle">Change Title</label>

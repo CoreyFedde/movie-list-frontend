@@ -1,11 +1,11 @@
 'use strict'
 
-const listsTemplate = require('../templates/show-lists.handlebars')
+const moviesTemplate = require('../templates/show-movies.handlebars')
 
-const getListsSuccess = (data) => {
+const getMoviesSuccess = (data) => {
   console.log(data)
-  let listsHTML = listsTemplate({ lists: data.lists })
-  $('.poster-board').append(listsHTML)
+  let moviesHTML = moviesTemplate({ movies: data.movies })
+  $('.poster-board').append(moviesHTML)
 }
 
 const failure = (error) => {
@@ -13,6 +13,6 @@ const failure = (error) => {
 }
 
 module.exports = {
-  getListsSuccess,
+  getMoviesSuccess,
   failure
 }

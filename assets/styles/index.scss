@@ -27,5 +27,34 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .list{
-  border:solid thin black;
+  border: solid thin black;
+}
+
+.show-button{
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-right: 30px;
+      border-left: thin solid black;
+      border-bottom: thin solid black;
+      padding: 8px 10px;
+  }
+
+.show-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.remove-button{
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-left: thin solid black;
+      border-bottom: thin solid black;
+      padding: 8px 10px;
+  }
+
+.remove-button:hover {
+  background-color: #f44336;
+  color: white;
 }
