@@ -96,24 +96,24 @@ const onGetOneMovie = function (event) {
 
 const createNewMovie = function (event) {
   event.preventDefault()
-  console.log('starting console logs from createNewMovie')
-  console.log('this is store.user: ', store.user)
-  console.log('this is getFormFields(event.target): ', getFormFields(event.target))
-  console.log('this is getFormFields(this): ', getFormFields(this))
-  let data = getFormFields(this)
-  console.log('this is event: ', event)
-  console.log('this is event.target: ', event.target)
-  console.log('this is data before newMovie runs: ', data)
+  // console.log('starting console logs from createNewMovie')
+  // console.log('this is store.user: ', store.user)
+  // console.log('this is getFormFields(event.target): ', getFormFields(event.target))
+  // console.log('this is getFormFields(this): ', getFormFields(this))
+  const data = getFormFields(this)
+  // console.log('this is event: ', event)
+  // console.log('this is event.target: ', event.target)
+  // console.log('this is data before newMovie runs: ', data)
   newMovie(data)
     .then(function (data) {
       console.log('this is data: ', data)
-      console.log('ending console logs from createNewMovie')
+      // console.log('ending console logs from createNewMovie')
       store.movie = data.movie
     })
     .catch(function (data) {
       console.log('createNewMovie did not work')
       console.log('this is data: ', data)
-      console.log('ending console logs from createNewMovie')
+      // console.log('ending console logs from createNewMovie')
     })
 }
 
