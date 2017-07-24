@@ -33,7 +33,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border: solid thin black;
 }
 
-.show-button{
+.check-button{
       position: absolute;
       right: 0;
       top: 0;
@@ -43,7 +43,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
       padding: 8px 10px;
   }
 
-.show-button:hover {
+.check-button:hover {
   background-color: #f44336;
   color: white;
 }
@@ -63,4 +63,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .footer {
   margin-top: 10px;
+}
+.small{
+  font-size: 20px;
+}
+.watched{
+  text-decoration: line-through;
 }

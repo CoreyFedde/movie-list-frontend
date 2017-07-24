@@ -1,7 +1,13 @@
 <div class="list col-xs-12">
-  <h5 data-id="{{movie.id}}"><span="genre">Genre:</span>{{movie.title}} </h5>
+    {{#if movie.watched}}
+    <h5 data-id="{{movie.id}}" class="movie watched">{{movie.genres}}: {{movie.title}}</h5>
     <div id="{{id}}" class="remove-button">X</div>
-    <div id="{{id}}" class="show-button">O</div>
+    <div id="{{id}}" class="watched check-button">O</div>
+    {{else}}
+    <h5 data-id="{{movie.id}}" class="movie">{{movie.genres}}: {{movie.title}}</h5>
+    <div id="{{id}}" class="remove-button">X</div>
+    <div id="{{id}}" class="check-button">O</div>
+    {{/if}}
   <!-- <hr class="">
   <p class="notes"> {{movie.notes}} </p> -->
 </div>

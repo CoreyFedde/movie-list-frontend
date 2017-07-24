@@ -22,6 +22,7 @@ $(() => {
   $('#logOutButton').hide()
   $('.poster-board').hide()
   $('.create-list-box').hide()
+  $('#updateForm').on('submit', interactions.onMovieUpdate)
 })
 
 $('document').on('click', '.poster-board', function (event) {

@@ -26,6 +26,22 @@ const onGetMovies = function (event) {
     const moviesHTML = moviesTemplate({ movies: reverseMovies })
     $('.poster-board').append(moviesHTML)
     $('.remove-button').on('click', onDeleteMovie)
+    $('.check-button').on('click', onMovieUpdate)
+    $('.movie').on('click', function (event) {
+      console.log('clicked; ', this)
+      if ($(this).children('.notes').hasClass('hide')) {
+        $(this).children('.notes').removeClass('hide')
+      } else {
+        $(this).children('.notes').addClass('hide')
+      }
+    })
+    //   console.log('clicked; ', this)
+    //   if ($(this).parent().children('.notes').hasClass('hide')) {
+    //     $(this).parent().children('.notes').removeClass('hide')
+    //   } else {
+    //     $(this).parent().children('.notes').addClass('hide')
+    //   }
+    // })
   })
   .catch(ui.failure)
 }
@@ -50,7 +66,7 @@ const createNewMovie = function (event) {
   console.log('create data: ', data)
   api.newMovie(data)
     .then(function (data) {
-      $('#toDoInput').val('')
+      $('.form-control').val('')
       store.movie = data.movie
       // console.log('store.movie; ', store.movie)
       // console.log('Successful onCreateNewMovie')
@@ -75,12 +91,30 @@ const onDeleteMovie = function (data) {
     .catch(ui.failure)
 }
 
-const onMovieUpdate = function () {
-  event.preventDefault()
-  const data = getFormFields(this)
-  api.movieUpdate(data)
-    .then(ui.onMovieUpdateSuccess)
-    .catch(ui.failure)
+const onMovieUpdate = function (data) {
+  console.log(this)
+  const movie = $(this)
+  if (movie.hasClass('watched')) {
+    event.preventDefault()
+    console.log('clicked onMovieUnwatch button')
+    console.log(this)
+    api.movieUnwatch(this.id)
+      .then(function () {
+        ui.onMovieUpdateSuccess
+        onGetMovies()
+      })
+      .catch(ui.failure)
+  } else {
+    event.preventDefault()
+    console.log('clicked onMovieWatch button')
+    console.log(this)
+    api.movieWatch(this.id)
+      .then(function () {
+        ui.onMovieUpdateSuccess
+        onGetMovies()
+      })
+      .catch(ui.failure)
+  }
 }
 
 module.exports = {

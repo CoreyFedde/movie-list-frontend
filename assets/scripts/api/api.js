@@ -65,14 +65,32 @@ const deleteMovie = function (data) {
   })
 }
 
-const movieUpdate = function (data) {
+const movieWatch = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/movies/' + store.game.id,
+    url: config.apiOrigin + '/movies/' + data,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      'movie': {
+        'watched': 'Yes'
+      }
+    }
+  })
+}
+const movieUnwatch = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/movies/' + data,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'movie': {
+        'watched': ''
+      }
+    }
   })
 }
 
@@ -81,5 +99,6 @@ module.exports = {
   getMovies,
   getOneMovie,
   deleteMovie,
-  movieUpdate
+  movieWatch,
+  movieUnwatch
 }

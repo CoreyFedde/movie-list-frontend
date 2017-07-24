@@ -1,11 +1,17 @@
 {{#each movies as |movie|}}
 
-      <div class="list col-xs-12">
-        <h5 data-id="{{movie.id}}"><span="genre">Genre:</span>{{movie.title}} </h5>
+      <div class="list movie col-xs-12">
+          {{#if movie.watched}}
+          <h5 data-id="{{movie.id}}" class="movie watched">{{movie.genres}}: {{movie.title}}</h5>
           <div id="{{id}}" class="remove-button">X</div>
-          <div id="{{id}}" class="show-button">O</div>
-        <!-- <hr class="">
-        <p class="notes"> {{movie.notes}} </p> -->
+          <div id="{{id}}" class="watched check-button">O</div>
+          {{else}}
+          <h5 data-id="{{movie.id}}" class="movie">{{movie.genres}}: {{movie.title}}</h5>
+          <div id="{{id}}" class="remove-button">X</div>
+          <div id="{{id}}" class="check-button">O</div>
+          {{/if}}
+        <hr class="notes movie hide">
+        <p class="notes movie hide">Notes: {{movie.notes}} </p>
       </div>
 
 {{/each}}
