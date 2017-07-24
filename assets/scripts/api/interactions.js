@@ -3,6 +3,7 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const moviesTemplate = require('../templates/show-movies.handlebars')
+const store = require('../store.js')
 
 // const gameStatus = {
 //   over: false
@@ -11,8 +12,12 @@ const moviesTemplate = require('../templates/show-movies.handlebars')
 const onGetMovies = function (event) {
   api.getMovies()
   .then(function (data) {
-    const moviesHTML = moviesTemplate({ movies: data.movies })
-    $('.poster-board').prepend(moviesHTML)
+    console.log('worked')
+    ui.clear()
+    const reverseMovies = data.movies.reverse()
+    console.log('sortedMovies:', reverseMovies)
+    const moviesHTML = moviesTemplate({ movies: reverseMovies })
+    $('.poster-board').append(moviesHTML)
     $('.remove-button').on('click', onDeleteMovie)
   })
   .catch(ui.failure)
@@ -34,14 +39,23 @@ const createNewMovie = function (event) {
   // console.log('this is event: ', event)
   // console.log('this is event.target: ', event.target)
   // console.log('this is data before newMovie runs: ', data)
+  console.log('data from create: ', data)
+  console.log('create data: ', data)
   api.newMovie(data)
-    .then(ui.createNewMovieSuccess)
-    .catch(ui.failure)
+    .then(function (data) {
+      store.movie = data.movie
+      // console.log('store.movie; ', store.movie)
+      // console.log('Successful onCreateNewMovie')
+      api.getOneMovie(data.movie.id)
+        .then(ui.onGetOneMovieSuccess)
+        .catch(ui.failure)
+    })
 }
 
-const onDeleteMovie = function (event) {
+const onDeleteMovie = function (data) {
   console.log('At least it clicked')
-  api.deleteMovie()
+  console.log('This: ', this)
+  api.deleteMovie(this.id)
     .then(ui.onDeleteMovieSuccess)
     .catch(ui.failure)
 }

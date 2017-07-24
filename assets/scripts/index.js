@@ -14,7 +14,7 @@ $(() => {
   $('#changePasswordForm').on('submit', user.onChangePassword)
   $('#logOutButton').on('click', user.onLogOut)
   $('#apiAddMovieForm').on('submit', interactions.createNewMovie)
-  $('#apiAddMovieForm').on('submit', interactions.onGetMovies)
+  // $('#apiAddMovieForm').on('submit', interactions.onGetMovies)
   $('#getListsButton').on('click', interactions.onGetMovies)
   $('#getOneListButton').on('click', interactions.onGetOneMovie)
   $('#changePasswordButton').hide()

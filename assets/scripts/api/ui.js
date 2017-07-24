@@ -1,21 +1,22 @@
 'use strict'
-
-const api = require('./api.js')
-const moviesTemplate = require('../templates/show-movies.handlebars')
+const moviesTemplate = require('../templates/show-movie.handlebars')
 const store = require('../store.js')
 
 const getMoviesSuccess = (data) => {
   console.log(data)
+
   const moviesHTML = moviesTemplate({ movies: data.movies })
   $('.poster-board').prepend(moviesHTML)
 }
 const onGetOneMovieSuccess = (data) => {
+  console.log(data)
   console.log('Successful onGetOneMovie')
-  const moviesHTML = moviesTemplate({ movies: data.movies })
+  const moviesHTML = moviesTemplate({ movie: data.movie })
   $('.poster-board').prepend(moviesHTML)
 }
 const createNewMovieSuccess = (data) => {
   store.movie = data.movie
+  console.log('store.move: ', store.movie)
   console.log('Successful onCreateNewMovie')
 }
 const onMovieUpdateSuccess = (data) => {

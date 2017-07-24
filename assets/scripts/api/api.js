@@ -45,9 +45,9 @@ const getMovies = function () {
   })
 }
 
-const getOneMovie = function () {
+const getOneMovie = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/movies/' + 22,
+    url: config.apiOrigin + '/movies/' + data,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,9 +55,9 @@ const getOneMovie = function () {
   })
 }
 
-const deleteMovie = function () {
+const deleteMovie = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/movies/' + 22,
+    url: config.apiOrigin + '/movies/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
