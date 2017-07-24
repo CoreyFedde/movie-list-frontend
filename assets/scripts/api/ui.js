@@ -1,5 +1,6 @@
 'use strict'
-const moviesTemplate = require('../templates/show-movie.handlebars')
+const moviesTemplate = require('../templates/show-movies.handlebars')
+const movieTemplate = require('../templates/show-movie.handlebars')
 const store = require('../store.js')
 
 const getMoviesSuccess = (data) => {
@@ -11,7 +12,7 @@ const getMoviesSuccess = (data) => {
 const onGetOneMovieSuccess = (data) => {
   console.log(data)
   console.log('Successful onGetOneMovie')
-  const moviesHTML = moviesTemplate({ movie: data.movie })
+  const moviesHTML = movieTemplate({ movie: data.movie })
   $('.poster-board').prepend(moviesHTML)
 }
 const createNewMovieSuccess = (data) => {
@@ -24,6 +25,7 @@ const onMovieUpdateSuccess = (data) => {
 }
 const onDeleteMovieSuccess = (data) => {
   console.log('Successful onDeleteMovie')
+  clear()
 }
 const onSignUpSuccess = (data) => {
   console.log('Successful onSignUp')
@@ -44,6 +46,7 @@ const onChangePasswordSuccess = (data) => {
 }
 const onLogOutSuccess = (data) => {
   console.log('Successful onLogOut')
+  clear()
   $('#signInButton').show()
   $('#signUpButton').show()
   $('#changePasswordButton').hide()

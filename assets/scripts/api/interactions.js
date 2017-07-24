@@ -14,7 +14,14 @@ const onGetMovies = function (event) {
   .then(function (data) {
     console.log('worked')
     ui.clear()
-    const reverseMovies = data.movies.reverse()
+    console.log(data.movies)
+    const reverseMovies = data.movies.sort(function compare (a, b) {
+      if (a.id < b.id) {
+        return 1
+      } if (a.id > b.id) {
+        return -1
+      }
+    })
     console.log('sortedMovies:', reverseMovies)
     const moviesHTML = moviesTemplate({ movies: reverseMovies })
     $('.poster-board').append(moviesHTML)
@@ -56,7 +63,10 @@ const onDeleteMovie = function (data) {
   console.log('At least it clicked')
   console.log('This: ', this)
   api.deleteMovie(this.id)
-    .then(ui.onDeleteMovieSuccess)
+    .then(function () {
+      ui.onDeleteMovieSuccess()
+      onGetMovies()
+    })
     .catch(ui.failure)
 }
 
