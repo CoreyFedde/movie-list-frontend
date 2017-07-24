@@ -19,6 +19,7 @@ const createNewMovieSuccess = (data) => {
   store.movie = data.movie
   console.log('store.move: ', store.movie)
   console.log('Successful onCreateNewMovie')
+  $('.form-control').val('')
 }
 const onMovieUpdateSuccess = (data) => {
   console.log('Successful onMovieUpdate')
@@ -30,6 +31,7 @@ const onDeleteMovieSuccess = (data) => {
 const onSignUpSuccess = (data) => {
   console.log('Successful onSignUp')
   $('#signUpModal').modal('hide')
+  $('.form-control').val('')
 }
 const onLogInSuccess = (data) => {
   console.log('Successful onLogIn')
@@ -37,23 +39,33 @@ const onLogInSuccess = (data) => {
   $('#signUpModal').modal('hide')
   $('#signInButton').hide()
   $('#signUpButton').hide()
+  $('.cover').hide()
   $('#changePasswordButton').show()
   $('#logOutButton').show()
+  $('.poster-board').show()
+  $('.create-list-box').show()
+  $('.form-control').val('')
 }
 const onChangePasswordSuccess = (data) => {
   console.log('Successful onChangePassword')
+  $('.form-control').val('')
   $('#changePasswordModal').modal('hide')
 }
 const onLogOutSuccess = (data) => {
   console.log('Successful onLogOut')
   clear()
+  $('.form-control').val('')
   $('#signInButton').show()
   $('#signUpButton').show()
+  $('.cover').show()
   $('#changePasswordButton').hide()
   $('#logOutButton').hide()
+  $('.poster-board').hide()
+  $('.create-list-box').hide()
 }
 
 const failure = (error) => {
+  $('.form-control').val('')
   console.error(error)
 }
 

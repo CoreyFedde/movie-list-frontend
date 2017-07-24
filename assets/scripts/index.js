@@ -17,9 +17,11 @@ $(() => {
   // $('#apiAddMovieForm').on('submit', interactions.onGetMovies)
   $('#getListsButton').on('click', interactions.onGetMovies)
   $('#getOneListButton').on('click', interactions.onGetOneMovie)
+  $('#removeAllButton').on('click', ui.clear)
   $('#changePasswordButton').hide()
   $('#logOutButton').hide()
-  $('#removeAllButton').on('click', ui.clear)
+  $('.poster-board').hide()
+  $('.create-list-box').hide()
 })
 
 $('document').on('click', '.poster-board', function (event) {

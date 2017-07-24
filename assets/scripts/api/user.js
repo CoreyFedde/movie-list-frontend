@@ -79,6 +79,7 @@ const onLogIn = function (event) {
     store.user = data.user
     ui.onLogInSuccess()
     interactions.onGetMovies()
+    $('.form-control').val('')
     // $('#tempText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
   .catch(ui.failure)

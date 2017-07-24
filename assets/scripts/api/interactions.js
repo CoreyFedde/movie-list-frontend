@@ -50,6 +50,7 @@ const createNewMovie = function (event) {
   console.log('create data: ', data)
   api.newMovie(data)
     .then(function (data) {
+      $('#toDoInput').val('')
       store.movie = data.movie
       // console.log('store.movie; ', store.movie)
       // console.log('Successful onCreateNewMovie')
