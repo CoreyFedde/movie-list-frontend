@@ -54,9 +54,13 @@ const createNewMovie = function (event) {
       store.movie = data.movie
       // console.log('store.movie; ', store.movie)
       // console.log('Successful onCreateNewMovie')
-      api.getOneMovie(data.movie.id)
-        .then(ui.onGetOneMovieSuccess)
-        .catch(ui.failure)
+      // api.getOneMovie(data.movie.id)
+      //   .then(ui.onGetOneMovieSuccess)
+      //     .done(function () {
+      //       $('.remove-button').on('click', onDeleteMovie)
+      //     })
+      //   .catch(ui.failure)
+      onGetMovies()
     })
 }
 
