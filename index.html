@@ -23,23 +23,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Movie List</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
 
       <ul class="nav navbar-nav navbar-right">
         <!-- Modal Buttons -->
-        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signUpModal">
+        <button id="signUpButton" type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signUpModal">
           Sign-up
         </button>
-        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signInModal">
+        <button id="signInButton" type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signInModal">
           Sign-in
         </button>
-        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#changePasswordModal">
+        <button id="changePasswordButton" type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#changePasswordModal">
           Change Password
         </button>
-        <button id="signOutButton" type="button" class="btn btn-primary btn-md">
+        <button id="logOutButton" id="signOutButton" type="button" class="btn btn-primary btn-md">
           Log-out
         </button>
         <!-- Modal button end -->
@@ -48,16 +48,67 @@
   </div><!-- /.container-fluid -->
 </nav>
       <!-- end of navbar -->
-      <!-- Start of to-do-list -->
+      <!-- start of test -->
+<div class="container create-list-box">
+  <div class="row">
+    <div class="col-xs-8">
+      <form id="apiAddMovieForm" class="add-form form-inline">
+          <input name="movie[title]" id='toDoInput' class="form-inline form-control" type="text" placeholder="Title">
+          <!-- <input name="movie[notes]" id='#2' type="text"> -->
+          <select name="movie[genres]" class="form-control" placeholder="Genre">
+            <option value="" disabled selected hidden>Genre</option>
+            <option value="Action">Action</option>
+            <option value="Anime">Anime</option>
+            <option value="Childrens">Childrens</option>
+            <option value="Classic">Classic</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Indie">Indie</option>
+            <option value="International">International</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Sports">Sports</option>
+            <option value="Thriller">Thriller</option>
+          </select>
+          <button type="submit" id='createButton' class="btn btn-default">Add</button>
+          <!-- <button id='removeAllButton' class="btn btn-default">Clear</button> -->
+        </form>
+      </div>
+        <div class="col-xs-4">
+        <button id="chooseMovieButton" class="btn btn-default"> JUST TELL ME WHAT TO WATCH</button>
+        <!-- <button id='#' class="btn btn-default">What to watch right now</button> -->
+        <!-- <button id='getOneListButton' class="btn btn-default">Get one</button> -->
+        <!-- <button id="deleteButton" class="btn btn-default">Destroy</button> -->
+        <!-- <button id="getListsButton" class="btn btn-default">Get All</button> -->
+        </div>
+      </div>
+    </div>
+    <!-- </div>
+  </div> -->
 <div class="container">
+  <div id="board" class="poster-board row">
+  </div>
+</div>
+<div class="cover container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Sign in to start your list</h2>
+    </div>
+  </div>
+</div>
+      <!-- end of test -->
+      <!-- Start of to-do-list -->
+<!-- <div class="container">
   <div class="row">
     <div id="tempText" class="col-xs-3 side-bar">
-      <div class="btn-group-vertical" role="group" aria-label="...">
-        <button id="createButton" class="btn btn-default">Create</button>
-        <button id="deleteButton" class="btn btn-default">Destroy</button>
-        <button id="getListsButton" class="btn btn-default">Get All</button>
-        <button id="getOneListButton" class="btn btn-default">Get One</button>
-        <form id="apiTitleForm">
+      <div class="btn-group-vertical" role="group" aria-label="..."> -->
+        <!-- <button id="createButton" class="btn btn-default">Create</button> -->
+        <!-- <button id="deleteButton" class="btn btn-default">Destroy</button> -->
+        <!-- <button id="getListsButton" class="btn btn-default">Get All</button> -->
+        <!-- <button id="getOneListButton" class="btn btn-default">Get One</button> -->
+        <!-- <form id="apiTitleForm">
           <div class="form-group">
             <label for="InputTitle">Change Title</label>
             <input type="text" class="form-control" placeholder="New Title">
@@ -65,34 +116,14 @@
         </form>
       </div>
     </div>
-    <div class="col-xs-9">
-      <div class="row">
-        <div id="list-content" class="to_do col-xs-4 col-xs-offset-4 text-center">To-do List</div>
-      </div>
-      <div class="row">
-        <div id="toDoList" class="to_do_text col-xs-4 col-xs-offset-4">
-          <ul>
-            <li>Text</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="to_do col-xs-3 col-xs-offset-3 text-center">
-          <input id='toDoInput' type="text">
-          <button id='addTextButton'>button</button>
-        </div>
-      </div>
-    </div>
   </div>
-</div>
+</div> -->
 
           <!-- End of to-do list -->
           <!-- footer start -->
-          <nav class="navbar navbar-default navbar-fixed-bottom">
+          <nav class="footer navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-    ...
+    Corey Fedde
   </div>
 </nav>
           <!-- footer end -->

@@ -13,3 +13,67 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 700px;
   border: solid thin black;
 }
+
+.add-form{
+  padding: 5px;
+}
+.create-list-box{
+  border: solid thin black;
+}
+.btn-group-horizontal{
+  padding: 5px;
+}
+
+.poster-board{
+  border: solid thin black;
+  margin-bottom: 100px;
+}
+
+.list{
+  border: solid thin black;
+}
+
+.check-button{
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-right: 30px;
+      border-left: thin solid black;
+      border-bottom: thin solid black;
+      padding: 8px 10px;
+  }
+
+.check-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.remove-button{
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-left: thin solid black;
+      border-bottom: thin solid black;
+      padding: 8px 10px;
+  }
+
+.remove-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+.footer {
+  margin-top: 10px;
+}
+.small{
+  font-size: 20px;
+}
+.watched{
+  text-decoration: line-through;
+}
+.movie{
+  padding: 5px 0px 5px 15px;
+  margin: -5px 0px -5px -15px;
+}
+.choice{
+  background-color: green;
+}
