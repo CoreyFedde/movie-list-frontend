@@ -39,12 +39,18 @@ const onLogInSuccess = (data) => {
   $('#signUpModal').modal('hide')
   $('#signInButton').hide()
   $('#signUpButton').hide()
+  $('#signInButton2').hide()
+  $('#signUpButton2').hide()
   $('.cover').hide()
   $('#changePasswordButton').show()
   $('#logOutButton').show()
   $('.poster-board').show()
   $('.create-list-box').show()
   $('.form-control').val('')
+  $('#instructions').text('Never run out of movie ideas again!')
+  $('html, body').animate({
+    scrollTop: $('#listStart').offset().top
+  }, 1000)
 }
 const onChangePasswordSuccess = (data) => {
   console.log('Successful onChangePassword')
@@ -57,6 +63,8 @@ const onLogOutSuccess = (data) => {
   $('.form-control').val('')
   $('#signInButton').show()
   $('#signUpButton').show()
+  $('#signInButton2').show()
+  $('#signUpButton2').show()
   $('.cover').show()
   $('#changePasswordButton').hide()
   $('#logOutButton').hide()
