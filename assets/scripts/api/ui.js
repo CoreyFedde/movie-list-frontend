@@ -73,6 +73,14 @@ const clear = function () {
   $('#board').empty()
 }
 
+const chooseMovie = function () {
+  const choices = $('.list')
+  const randomChoice = choices[Math.floor(Math.random() * choices.length)]
+  console.log(randomChoice)
+  choices.removeClass('choice')
+  $(randomChoice).addClass('choice')
+}
+
 module.exports = {
   getMoviesSuccess,
   onGetOneMovieSuccess,
@@ -84,5 +92,6 @@ module.exports = {
   onChangePasswordSuccess,
   onLogOutSuccess,
   failure,
-  clear
+  clear,
+  chooseMovie
 }

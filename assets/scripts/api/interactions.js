@@ -27,12 +27,15 @@ const onGetMovies = function (event) {
     $('.poster-board').append(moviesHTML)
     $('.remove-button').on('click', onDeleteMovie)
     $('.check-button').on('click', onMovieUpdate)
+    $('.addNotesForm').on('submit', onAddNotes)
     $('.movie').on('click', function (event) {
       console.log('clicked; ', this)
       if ($(this).children('.notes').hasClass('hide')) {
         $(this).children('.notes').removeClass('hide')
+        $(this).parents().children('.addNotesForm').removeClass('hide')
       } else {
         $(this).children('.notes').addClass('hide')
+        $(this).parents().children('.addNotesForm').addClass('hide')
       }
     })
     //   console.log('clicked; ', this)
@@ -117,10 +120,25 @@ const onMovieUpdate = function (data) {
   }
 }
 
+const onAddNotes = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  data.movie.id = this.id
+  console.log('this', this.id)
+  console.log('add notes data; ', data)
+  api.addNotes(data)
+  .then(function () {
+    console.log('success addNotes')
+    onGetMovies()
+  })
+  .catch(ui.failure)
+}
+
 module.exports = {
   createNewMovie,
   onGetMovies,
   onGetOneMovie,
   onDeleteMovie,
-  onMovieUpdate
+  onMovieUpdate,
+  onAddNotes
 }

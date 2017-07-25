@@ -94,11 +94,23 @@ const movieUnwatch = function (data) {
   })
 }
 
+const addNotes = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/movies/' + data.movie.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   newMovie,
   getMovies,
   getOneMovie,
   deleteMovie,
   movieWatch,
-  movieUnwatch
+  movieUnwatch,
+  addNotes
 }
