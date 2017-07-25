@@ -1,14 +1,36 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body{
+  background-color: #F2F2F2;
+}
+.jumbotron{
+  padding-top: 50px;
+  padding-bottom: 20px;
+  // background-image: url("https://phraseit.net/image/rendered/vazc46.jpg");
+  // background-repeat: no-repeat;
+  // background-size: 100% auto;
+  // height: 500px;
+  background-color: #800020;
+  color: white;
+}
 .to_do {
   border: solid thin black;
 }
-
+.jumbo-image{
+  width: 100%;
+  height: auto;
+}
 .to_do_text {
   border: solid thin black;
   height: 200px;
 }
-
+.header{
+  border: solid thin #FFCF0F;
+  margin-bottom: 40px;
+  background-color: white;
+  color: #FFCF0F;
+}
 .side-bar {
   height: 700px;
   border: solid thin black;
@@ -19,6 +41,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .create-list-box{
   border: solid thin black;
+  background-color: #424242;
 }
 .btn-group-horizontal{
   padding: 5px;
@@ -41,10 +64,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
       border-left: thin solid black;
       border-bottom: thin solid black;
       padding: 8px 10px;
+      background-color: #C4C4C4;
   }
 
 .check-button:hover {
-  background-color: #f44336;
+  background-color: #FFCF0F;
   color: white;
 }
 
@@ -55,14 +79,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
       border-left: thin solid black;
       border-bottom: thin solid black;
       padding: 8px 10px;
+      background-color: 	#909090;
   }
-
+.award{
+  height: 35px;
+  width: 20px;
+}
 .remove-button:hover {
-  background-color: #f44336;
+  background-color: #800020;
   color: white;
 }
 .footer {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .small{
   font-size: 20px;
@@ -76,4 +104,29 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .choice{
   background-color: green;
+}
+.add-btn{
+  margin-top: 5px;
+  background-color: #FFCF0F;
+  border-color: #FFCF0F;
+}
+.handle-btn{
+  background-color: #FFCF0F;
+  border-color: #FFCF0F;
+}
+.nav-btn{
+  margin-top: 10px;
+}
+.main-content{
+  background-color: white;
+}
+.create-button{
+  background-color: #FFCF0F;
+  border-color: #FFCF0F;
+}
+.create-class{
+  border-color: #FFCF0F;
+}
+.movie-genre{
+  font-variant: small-caps;
 }
