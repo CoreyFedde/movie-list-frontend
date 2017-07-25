@@ -11,15 +11,178 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <body>
+      <!-- start of navbar -->
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Modal Buttons -->
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signUpModal">
+          Sign-up
+        </button>
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#signInModal">
+          Sign-in
+        </button>
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#changePasswordModal">
+          Change Password
+        </button>
+        <button id="signOutButton" type="button" class="btn btn-primary btn-md">
+          Log-out
+        </button>
+        <!-- Modal button end -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+      <!-- end of navbar -->
+      <!-- Start of to-do-list -->
+<div class="container">
+  <div class="row">
+    <div id="tempText" class="col-xs-3 side-bar">
+      <div class="btn-group-vertical" role="group" aria-label="...">
+        <button id="createButton" class="btn btn-default">Create</button>
+        <button id="deleteButton" class="btn btn-default">Destroy</button>
+        <button id="getListsButton" class="btn btn-default">Get All</button>
+        <button id="getOneListButton" class="btn btn-default">Get One</button>
+        <form id="apiTitleForm">
+          <div class="form-group">
+            <label for="InputTitle">Change Title</label>
+            <input type="text" class="form-control" placeholder="New Title">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="row">
+        <div id="list-content" class="to_do col-xs-4 col-xs-offset-4 text-center">To-do List</div>
+      </div>
+      <div class="row">
+        <div id="toDoList" class="to_do_text col-xs-4 col-xs-offset-4">
+          <ul>
+            <li>Text</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="to_do col-xs-3 col-xs-offset-3 text-center">
+          <input id='toDoInput' type="text">
+          <button id='addTextButton'>button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- End of to-do list -->
+          <!-- footer start -->
+          <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    ...
+  </div>
+</nav>
+          <!-- footer end -->
+
+          <!-- modal start -->
+<!-- Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign-up</h4>
+      </div>
+      <div class="modal-body">
+        <!-- form start -->
+        <form id="signUpForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input name="credentials[password_confirmation]" type="password" class="form-control" id="confirmExampleInputPassword1"  placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!-- form end -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign-in</h4>
+      </div>
+      <div class="modal-body">
+        <!-- form start -->
+        <form id="signInForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="credentials[password]"  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!-- form end -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">change-password</h4>
+      </div>
+      <div class="modal-body">
+        <!-- form start -->
+        <form id="changePasswordForm">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Current Password</label>
+            <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!-- form end -->
+      </div>
+    </div>
+  </div>
+</div>
+          <!-- modal end -->
 </html>
