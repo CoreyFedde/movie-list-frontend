@@ -1,14 +1,28 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.jumbotron{
+  padding-top: 50px;
+  padding-bottom: 20px;
+  // background-image: url("https://phraseit.net/image/rendered/vazc46.jpg");
+  // background-repeat: no-repeat;
+  // background-size: 100% auto;
+  // height: 500px;
+}
 .to_do {
   border: solid thin black;
 }
-
+.jumbo-image{
+  width: 100%;
+  height: auto;
+}
 .to_do_text {
   border: solid thin black;
   height: 200px;
 }
-
+.header{
+  border: solid thin black;
+}
 .side-bar {
   height: 700px;
   border: solid thin black;
@@ -56,13 +70,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
       border-bottom: thin solid black;
       padding: 8px 10px;
   }
-
+.award{
+  height: 35px;
+  width: 20px;
+}
 .remove-button:hover {
   background-color: #f44336;
   color: white;
 }
 .footer {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .small{
   font-size: 20px;
