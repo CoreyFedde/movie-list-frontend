@@ -53,10 +53,12 @@ const createNewMovie = function (event) {
   api.newMovie(data)
     .then(function (data) {
       $('.form-control').val('')
+      $('.form-control').attr('placeholder', '')
       store.movie = data.movie
       onGetMovies()
       $('#chooseMovieButton').show()
     })
+    .catch(ui.addMovieFailure)
 }
 
 const onDeleteMovie = function (data) {
@@ -97,7 +99,7 @@ const onAddNotes = function (event) {
   .then(function () {
     onGetMovies()
   })
-  .catch(ui.failure)
+  .catch(ui.addNotesFailure)
 }
 
 module.exports = {

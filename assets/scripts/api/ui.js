@@ -14,6 +14,7 @@ const onGetOneMovieSuccess = (data) => {
 const createNewMovieSuccess = (data) => {
   store.movie = data.movie
   $('.form-control').val('')
+  $('.form-control').attr('placeholder', '')
 }
 const onMovieUpdateSuccess = (data) => {
 }
@@ -23,6 +24,7 @@ const onDeleteMovieSuccess = (data) => {
 const onSignUpSuccess = (data) => {
   $('#signUpModal').modal('hide')
   $('.form-control').val('')
+  $('.form-control').attr('')
 }
 const onLogInSuccess = (data) => {
   $('#signInModal').modal('hide')
@@ -37,6 +39,7 @@ const onLogInSuccess = (data) => {
   $('.poster-board').show()
   $('.create-list-box').show()
   $('.form-control').val('')
+  $('.form-control').attr('placeholder', '')
   $('#instructions').text('Never run out of movie ideas again!')
   $('html, body').animate({
     scrollTop: $('#listStart').offset().top
@@ -44,11 +47,13 @@ const onLogInSuccess = (data) => {
 }
 const onChangePasswordSuccess = (data) => {
   $('.form-control').val('')
+  $('.form-control').attr('placeholder', '')
   $('#changePasswordModal').modal('hide')
 }
 const onLogOutSuccess = (data) => {
   clear()
   $('.form-control').val('')
+  $('.form-control').attr('placeholder', '')
   $('#signInButton').show()
   $('#signUpButton').show()
   $('#signInButton2').show()
@@ -60,8 +65,33 @@ const onLogOutSuccess = (data) => {
   $('.create-list-box').hide()
 }
 
-const failure = (error) => {
+const failure = () => {
   $('.form-control').val('')
+}
+
+const signUpFailure = () => {
+  $('.form-control').val('')
+  $('.signUpFormElement').attr('placeholder', 'Oops! Please try again.')
+}
+
+const signInFailure = () => {
+  $('.form-control').val('')
+  $('.signInFormElement').attr('placeholder', 'Oops! Please try again.')
+}
+
+const changePasswordFailure = () => {
+  $('.form-control').val('')
+  $('.changePasswordFormElement').attr('placeholder', 'Oops! Please try again.')
+}
+
+const addNotesFailure = () => {
+  $('.form-control').val('')
+  $('.notes-form-input').attr('placeholder', 'Oops! Please try again.')
+}
+
+const addMovieFailure = () => {
+  $('.form-control').val('')
+  $('.create-class').attr('placeholder', 'Oops! Please try again.')
 }
 
 const clear = function () {
@@ -90,5 +120,10 @@ module.exports = {
   onLogOutSuccess,
   failure,
   clear,
-  chooseMovie
+  chooseMovie,
+  signUpFailure,
+  signInFailure,
+  changePasswordFailure,
+  addNotesFailure,
+  addMovieFailure
 }

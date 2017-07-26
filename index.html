@@ -4,7 +4,9 @@
 <head>
   <title>Indie_List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Taviraj|Work+Sans');
+  </style>
   <!-- Do not add `link` tags unless you know what you are doing -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -156,11 +158,11 @@
           <form id="signUpForm">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <input name="credentials[email]" type="email" class="form-control signUpFormElement" id="exampleInputEmail1" placeholder="Email">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input name="credentials[password]" type="password" class="form-control signUpFormElement" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Confirm Password</label>
@@ -188,11 +190,11 @@
           <form id="signInForm">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <input name="credentials[email]" type="email" class="form-control signInFormElement" id="exampleInputEmail1" placeholder="Email">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input name="credentials[password]" type="password" class="form-control signInFormElement" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
@@ -216,11 +218,11 @@
           <form id="changePasswordForm">
             <div class="form-group">
               <label for="exampleInputPassword1">Current Password</label>
-              <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input name="passwords[old]" type="password" class="form-control changePasswordFormElement" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">New Password</label>
-              <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input name="passwords[new]" type="password" class="form-control changePasswordFormElement" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>

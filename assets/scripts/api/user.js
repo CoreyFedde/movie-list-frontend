@@ -63,7 +63,7 @@ const onSignUp = function (event) {
       })
       .catch(ui.failure)
     })
-    .catch(ui.failure)
+    .catch(ui.signUpFailure)
 }
 
 const onLogIn = function (event) {
@@ -75,9 +75,10 @@ const onLogIn = function (event) {
     ui.onLogInSuccess()
     interactions.onGetMovies()
     $('.form-control').val('')
+    $('.form-control').attr('placeholder', '')
     // $('#tempText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
-  .catch(ui.failure)
+  .catch(ui.signInFailure)
 }
 
 const onChangePassword = function (event) {
@@ -85,7 +86,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(this)
   changePassword(data)
     .then(ui.onChangePasswordSuccess)
-    .catch(ui.failure)
+    .catch(ui.changePasswordFailure)
 }
 
 const onLogOut = function (event) {

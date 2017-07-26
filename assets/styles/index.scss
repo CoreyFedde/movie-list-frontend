@@ -3,6 +3,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-grey: #f2f2f2;
 $primary-accent: #800020;
 
+h1,
+h2,
+h3 {
+font-family: 'Work Sans', sans-serif;
+}
+
+h4,
+h5,
+h6,
+p {
+  font-family: 'Taviraj', serif;
+}
+
+.error {
+  background-color: red;
+}
+
 body {
   background-color: $background-grey;
 }
@@ -159,10 +176,15 @@ body {
 }
 
 .movie-genre {
-  font-variant: small-caps;
 }
 
-.movie-title {}
+.movie-title {
+  font-family: 'Taviraj', serif;
+  font-stretch: extra-expanded;
+  font-weight: 400;
+  font-size: 15px;
+  color: black;
+}
 
 .Action {
   background: white;
