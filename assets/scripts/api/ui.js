@@ -63,6 +63,8 @@ const onLogOutSuccess = (data) => {
   $('#logOutButton').hide()
   $('.poster-board').hide()
   $('.create-list-box').hide()
+  $('#headerBox').removeClass('highlight')
+  $('#changingText').text('Your Indie_List')
 }
 
 const failure = () => {
