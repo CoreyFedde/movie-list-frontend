@@ -28,8 +28,6 @@ $(() => {
 })
 
 // $('document').on('click', '.poster-board', function (event) {
-//   console.log(this.id)
-//   console.log('click')
 //   $('#board').toggle()
 // })
 

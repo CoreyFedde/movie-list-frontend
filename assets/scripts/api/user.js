@@ -45,8 +45,6 @@ const logOut = function () {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(event.target)
-  console.log(data)
   signUp(data)
     .then(function (response) {
       ui.onSignUpSuccess
@@ -70,10 +68,7 @@ const onSignUp = function (event) {
 
 const onLogIn = function (event) {
   event.preventDefault()
-  console.log('this is getFormFields: ', getFormFields(this))
   const data = getFormFields(this)
-  console.log('this is event: ', event)
-  console.log('this is data: ', data)
   signIn(data)
   .then(function (data) {
     store.user = data.user

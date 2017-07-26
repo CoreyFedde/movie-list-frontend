@@ -1,15 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$background-grey: #f2f2f2;
+$primary-accent: #800020;
 
 body {
-  background-color: #F2F2F2;
+  background-color: $background-grey;
 }
 
 .jumbotron {
-  padding-top: 50px;
-  padding-bottom: 20px;
-  background-color: #800020;
+  background-color: $primary-accent;
   color: white;
+  padding-bottom: 20px;
+  padding-top: 50px;
 }
 
 .notes-form-input {
@@ -31,15 +33,15 @@ body {
 }
 
 .header {
-  border: solid thin #800020;
-  margin-bottom: 40px;
   background-color: white;
-  color: #800020;
+  color: $primary-accent;
+  border: solid thin $primary-accent;
+  margin-bottom: 40px;
 }
 
 .side-bar {
-  height: 700px;
   border: solid thin black;
+  height: 700px;
 }
 
 .add-form {
@@ -47,8 +49,8 @@ body {
 }
 
 .create-list-box {
-  border: solid thin black;
   background-color: #424242;
+  border: solid thin black;
 }
 
 .btn-group-horizontal {
@@ -65,14 +67,14 @@ body {
 }
 
 .check-button {
+  border-left: thin solid black;
+  border-bottom: thin solid black;
+  background-color: #C4C4C4;
+  margin-right: 30px;
+  padding: 8px 10px;
   position: absolute;
   right: 0;
   top: 0;
-  margin-right: 30px;
-  border-left: thin solid black;
-  border-bottom: thin solid black;
-  padding: 8px 10px;
-  background-color: #C4C4C4;
 }
 
 .check-button:hover {
@@ -88,17 +90,21 @@ body {
   border-bottom: thin solid black;
   padding: 8px 10px;
   background-color: #909090;
+
+  &:hover {
+    background-color: $primary-accent;
+    color: white;
+  }
 }
 
 .award {
   height: 35px;
   width: 20px;
 }
-
-.remove-button:hover {
-  background-color: #800020;
-  color: white;
-}
+// .remove-button:hover {
+//   background-color: $primary-accent;
+//   color: white;
+// }
 
 .footer {
   margin-top: 50px;
@@ -113,20 +119,20 @@ body {
 }
 
 .movie {
-  padding: 5px 0 5px 15px;
   margin: -5px 0 -5px -15px;
+  padding: 5px 0 5px 15px;
 }
 
 .add-btn {
-  margin-top: 5px;
-  background-color: #800020;
-  border-color: #800020;
+  background-color: $primary-accent;
+  border-color: $primary-accent;
   color: white;
+  margin-top: 5px;
 }
 
 .handle-btn {
-  background-color: #800020;
-  border-color: #800020;
+  background-color: $primary-accent;
+  border-color: $primary-accent;
   color: white;
 }
 
@@ -139,13 +145,13 @@ body {
 }
 
 .create-button {
-  background-color: #800020;
-  border-color: #800020;
+  background-color: $primary-accent;
+  border-color: $primary-accent;
   color: white;
 }
 
 .create-class {
-  border-color: #800020;
+  border-color: $primary-accent;
 }
 
 .movie-genre {
@@ -166,19 +172,18 @@ body {
   background: linear-gradient(to right, white , #3F7FBF);
   /* Standard syntax */
   // background-color: rbga(199, 199, 199, 1);
-}
-
-.Action:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Anime {
@@ -193,19 +198,18 @@ body {
   background: linear-gradient(to right, white , #19334C);
   /* Standard syntax */
   // background-color: rgba(153, 153, 153, 1);
-}
-
-.Anime:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Childrens {
@@ -220,19 +224,18 @@ body {
   background: linear-gradient(to right, white , #3FBFBF);
   /* Standard syntax */
   // background-color: rgba(75, 75, 75, 1);
-}
-
-.Childrens:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Classic {
@@ -247,19 +250,18 @@ body {
   background: linear-gradient(to right, white , #260C0C);
   /* Standard syntax */
   // background-color: rgba(157, 0, 4, 1);
-}
-
-.Classic:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Comedy {
@@ -274,19 +276,18 @@ body {
   background: linear-gradient(to right, white , #0C260C);
   /* Standard syntax */
   // background-color: rgba(214, 0, 3, 1);
-}
-
-.Comedy:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Documentary {
@@ -301,19 +302,18 @@ body {
   background: linear-gradient(to right, white , #260C26);
   /* Standard syntax */
   // background-color: rgba(255, 160, 0, 1);
-}
-
-.Documentary:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Drama {
@@ -328,19 +328,18 @@ body {
   background: linear-gradient(to right, white , #FFCF0F);
   /* Standard syntax */
   // background-color: rgba(255, 207, 15, 1);
-}
-
-.Drama:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Horror {
@@ -355,19 +354,18 @@ body {
   background: linear-gradient(to right, white , #FBE89C);
   /* Standard syntax */
   // background-color: rgba(247, 79, 7, 1);
-}
-
-.Horror:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Indie {
@@ -382,46 +380,44 @@ body {
   background: linear-gradient(to right, white , #624F03);
   /* Standard syntax */
   // background-color: rgba(148, 47, 4, 1);
-}
-
-.Indie:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .International {
   background: white;
   /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, white , #800020);
+  background: -webkit-linear-gradient(left, white , $primary-accent);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, white, #800020);
+  background: -o-linear-gradient(right, white, $primary-accent);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, white, #800020);
+  background: -moz-linear-gradient(right, white, $primary-accent);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, white , #800020);
+  background: linear-gradient(to right, white , $primary-accent);
   /* Standard syntax */
   // background-color: rgba(119, 4, 148, 1);
-}
-
-.International:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Romance {
@@ -436,19 +432,18 @@ body {
   background: linear-gradient(to right, white , #CC0033);
   /* Standard syntax */
   // background-color: rgba(4, 33, 148, 1);
-}
-
-.Romance:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Sci-Fi {
@@ -463,19 +458,18 @@ body {
   background: linear-gradient(to right, white , #D2691E);
   /* Standard syntax */
   // background-color: rgba(148, 47, 4, 1);
-}
-
-.Sci-Fi:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Sports {
@@ -490,19 +484,18 @@ body {
   background: linear-gradient(to right, white , #8D3F0B);
   /* Standard syntax */
   // background-color: rgba(1, 1, 1, 1);
-}
-
-.Sports:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .Thriller {
@@ -517,31 +510,30 @@ body {
   background: linear-gradient(to right, white , #F3A571);
   /* Standard syntax */
   // background-color: rgba(100, 100, 100, 1);
-}
-
-.Thriller:hover {
-  background-color: grey;
-  background: -webkit-linear-gradient(left, grey , grey);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, grey, grey);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, grey, grey);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, grey , grey);
-  /* Standard syntax */
-  color: white;
+  &:hover {
+    background: -webkit-linear-gradient(left, grey , grey);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, grey, grey);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, grey , grey);
+    /* Standard syntax */
+    background-color: grey;
+    color: white;
+  }
 }
 
 .choice {
-  background: #800020;
+  background: $primary-accent;
   /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #800020 , #800020);
+  background: -webkit-linear-gradient(left, $primary-accent , $primary-accent);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #800020, #800020);
+  background: -o-linear-gradient(right, $primary-accent, $primary-accent);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #800020, #800020);
+  background: -moz-linear-gradient(right, $primary-accent, $primary-accent);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #800020 , #800020);
+  background: linear-gradient(to right, $primary-accent , $primary-accent);
   /* Standard syntax */
   color: white;
 }
