@@ -39,6 +39,11 @@ body {
   margin-bottom: 40px;
 }
 
+.highlight {
+  background-color: #FFCF0F;
+  color: white;
+}
+
 .side-bar {
   border: solid thin black;
   height: 700px;
@@ -75,11 +80,10 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.check-button:hover {
-  background-color: #FFCF0F;
-  color: white;
+  &:hover {
+    background-color: #FFCF0F;
+    color: white;
+  }
 }
 
 .remove-button {

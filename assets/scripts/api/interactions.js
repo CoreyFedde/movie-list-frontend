@@ -30,6 +30,13 @@ const onGetMovies = function (event) {
         $(this).parents().children('.addNotesForm').addClass('hide')
       }
     })
+    if ($('.movie').length < 1) {
+      $('#chooseMovieButton').hide()
+    } else {
+      $('#chooseMovieButton').show()
+    }
+    $('#headerBox').removeClass('highlight')
+    $('#changingText').text('Your Indie_List')
   })
   .catch(ui.failure)
 }
@@ -48,6 +55,7 @@ const createNewMovie = function (event) {
       $('.form-control').val('')
       store.movie = data.movie
       onGetMovies()
+      $('#chooseMovieButton').show()
     })
 }
 

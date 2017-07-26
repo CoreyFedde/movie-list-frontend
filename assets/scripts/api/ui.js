@@ -71,8 +71,11 @@ const clear = function () {
 const chooseMovie = function () {
   const choices = $('.list')
   const randomChoice = choices[Math.floor(Math.random() * choices.length)]
+  const movieTitle = $(randomChoice).children().children().children('.movie-title').text()
+  $('#changingText').text('Watch: ' + movieTitle)
   choices.removeClass('choice')
   $(randomChoice).addClass('choice')
+  $('#headerBox').addClass('highlight')
 }
 
 module.exports = {
