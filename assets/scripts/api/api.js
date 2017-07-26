@@ -2,28 +2,6 @@
 const store = require('../store.js')
 const config = require('../config.js')
 
-// const gameStatus = {
-//   over: false
-// }
-
-// WILL NEED TO SET TITLE TO A VAR
-
-// const newMovie = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/movies/',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: {
-//       'movie': {
-//         'title': 'Rush Hour',
-//         'notes': 'always great'
-//       }
-//     }
-//   })
-// }
-
 const newMovie = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/movies/',

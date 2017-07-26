@@ -4,37 +4,27 @@ const movieTemplate = require('../templates/show-movie.handlebars')
 const store = require('../store.js')
 
 const getMoviesSuccess = (data) => {
-  console.log(data)
-
   const moviesHTML = moviesTemplate({ movies: data.movies })
   $('.poster-board').prepend(moviesHTML)
 }
 const onGetOneMovieSuccess = (data) => {
-  console.log(data)
-  console.log('Successful onGetOneMovie')
   const moviesHTML = movieTemplate({ movie: data.movie })
   $('.poster-board').prepend(moviesHTML)
 }
 const createNewMovieSuccess = (data) => {
   store.movie = data.movie
-  console.log('store.move: ', store.movie)
-  console.log('Successful onCreateNewMovie')
   $('.form-control').val('')
 }
 const onMovieUpdateSuccess = (data) => {
-  console.log('Successful onMovieUpdate')
 }
 const onDeleteMovieSuccess = (data) => {
-  console.log('Successful onDeleteMovie')
   clear()
 }
 const onSignUpSuccess = (data) => {
-  console.log('Successful onSignUp')
   $('#signUpModal').modal('hide')
   $('.form-control').val('')
 }
 const onLogInSuccess = (data) => {
-  console.log('Successful onLogIn')
   $('#signInModal').modal('hide')
   $('#signUpModal').modal('hide')
   $('#signInButton').hide()
@@ -53,12 +43,10 @@ const onLogInSuccess = (data) => {
   }, 1000)
 }
 const onChangePasswordSuccess = (data) => {
-  console.log('Successful onChangePassword')
   $('.form-control').val('')
   $('#changePasswordModal').modal('hide')
 }
 const onLogOutSuccess = (data) => {
-  console.log('Successful onLogOut')
   clear()
   $('.form-control').val('')
   $('#signInButton').show()
@@ -74,7 +62,6 @@ const onLogOutSuccess = (data) => {
 
 const failure = (error) => {
   $('.form-control').val('')
-  console.error(error)
 }
 
 const clear = function () {
@@ -84,7 +71,6 @@ const clear = function () {
 const chooseMovie = function () {
   const choices = $('.list')
   const randomChoice = choices[Math.floor(Math.random() * choices.length)]
-  console.log(randomChoice)
   choices.removeClass('choice')
   $(randomChoice).addClass('choice')
 }

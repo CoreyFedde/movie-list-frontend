@@ -27,21 +27,11 @@ $(() => {
   $('#chooseMovieButton').on('click', ui.chooseMovie)
 })
 
-$('document').on('click', '.poster-board', function (event) {
-  console.log(this.id)
-  console.log('click')
-  $('#board').toggle()
-})
-
-// let testF = function (arg) {
-//   $(arg.target).text('ok')
-// }
-
-// $('#toDoInput').bind("enterKey", function(e){
-//   console.log('enter')
+// $('document').on('click', '.poster-board', function (event) {
+//   console.log(this.id)
+//   console.log('click')
+//   $('#board').toggle()
 // })
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
 require('./example')
