@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Indie_List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Taviraj|Work+Sans');
+  </style>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- start of navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="https://coreyfedde.github.io/movie-list-frontend/">Indie_List</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- Modal Buttons -->
+          <button id="signUpButton" type="button" class="nav-btn btn btn-primary btn-md" data-toggle="modal" data-target="#signUpModal">
+              Sign-up
+            </button>
+          <button id="signInButton" type="button" class="nav-btn btn btn-primary btn-md" data-toggle="modal" data-target="#signInModal">
+              Sign-in
+            </button>
+          <button id="changePasswordButton" type="button" class="nav-btn btn btn-primary btn-md" data-toggle="modal" data-target="#changePasswordModal">
+              Change Password
+            </button>
+          <button id="logOutButton" id="signOutButton" type="button" class="nav-btn btn btn-primary btn-md ">
+              Log-out
+            </button>
+          <!-- Modal button end -->
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </nav>
+  <!-- end of navbar -->
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h1> Indie_List </h1>
+        </div>
+      </div>
+    </div>
+    <img class="jumbo-image" src="http://i.imgur.com/pEAKQmQ.png" alt="Never forget a movie">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2 id="instructions"> Sign-in to start your list</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <button id="signUpButton2" type="button" class="btn btn-primary btn-md btn-custom" data-toggle="modal" data-target="#signUpModal">
+              Sign-up
+            </button>
+          <button id="signInButton2" type="button" class="btn btn-primary btn-md btn-custom" data-toggle="modal" data-target="#signInModal">
+              Sign-in
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- start of test -->
+  <div class="container">
+    <div class="row">
+      <div id="headerBox" class="header col-xs-offset-3 col-xs-6 text-center">
+        <a id="listStart"></a> <h1 id="changingText">Your Indie_List</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container create-list-box">
+    <div class="row">
+      <div class="col-xs-8">
+        <form id="apiAddMovieForm" class="add-form form-inline">
+          <input name="movie[title]" id='toDoInput' class="form-inline form-control create-class" type="text" placeholder="Title">
+          <!-- <input name="movie[notes]" id='#2' type="text"> -->
+          <select name="movie[genres]" class="form-control create-class" placeholder="Genre">
+            <option value="" disabled selected hidden>Genre</option>
+            <option value="Action">Action</option>
+            <option value="Anime">Anime</option>
+            <option value="Childrens">Childrens</option>
+            <option value="Classic">Classic</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Indie">Indie</option>
+            <option value="International">International</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Sports">Sports</option>
+            <option value="Thriller">Thriller</option>
+          </select>
+          <button type="submit" id='createButton' class="create-button btn btn-default">Add a Movie</button>
+        </form>
+      </div>
+      <div class="col-xs-4">
+        <button id="chooseMovieButton" class="add-btn btn btn-default pull-right"> JUST TELL ME WHAT TO WATCH</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="board" class="main-content poster-board row">
+    </div>
+  </div>
+  <div class="cover container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Sign in to see your movie options!</h2>
+      </div>
+    </div>
+  </div>
+  <!-- end of test -->
+
+  <!-- footer start -->
+  <footer class="container footer">
+      <hr>
+    <div class="row">
+      <!-- <div class="col-xs-1">
+        <img class="award" src="https://image.flaticon.com/icons/svg/344/344679.svg">
+      </div> -->
+      <div class="col-xs-12 text-center">
+        <h5><span><img class="award" src="https://image.flaticon.com/icons/svg/344/344679.svg" alt="pic of award figure"></span>Corey Fedde</h5>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <!-- modal start -->
+  <!-- Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign-up</h4>
+        </div>
+        <div class="modal-body">
+          <!-- form start -->
+          <form id="signUpForm">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control signUpFormElement" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control signUpFormElement" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input name="credentials[password_confirmation]" type="password" class="form-control" id="confirmExampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign-in</h4>
+        </div>
+        <div class="modal-body">
+          <!-- form start -->
+          <form id="signInForm">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control signInFormElement" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control signInFormElement" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">change-password</h4>
+        </div>
+        <div class="modal-body">
+          <!-- form start -->
+          <form id="changePasswordForm">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Current Password</label>
+              <input name="passwords[old]" type="password" class="form-control changePasswordFormElement" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">New Password</label>
+              <input name="passwords[new]" type="password" class="form-control changePasswordFormElement" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
+
+</html>
