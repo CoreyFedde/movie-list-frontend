@@ -87,23 +87,31 @@ const changePasswordFailure = () => {
 }
 
 const addNotesFailure = () => {
+  // This clears the form fields on failure
   $('.form-control').val('')
   $('.notes-form-input').attr('placeholder', 'Oops! Please try again.')
 }
 
 const addMovieFailure = () => {
+  // This clears the form fields on failure
   $('.form-control').val('')
   $('.create-class').attr('placeholder', 'Oops! Please try again.')
 }
 
 const clear = function () {
+  // Clears the templates
   $('#board').empty()
 }
 
+// Movie randomizer
 const chooseMovie = function () {
+  // takes all of the movies with a class of .list
   const choices = $('.list')
+  // picks a parent div at random with the math functions
   const randomChoice = choices[Math.floor(Math.random() * choices.length)]
+  // targets the title of randomly chosen movie
   const movieTitle = $(randomChoice).children().children().children('.movie-title').text()
+  // Adds styling to the choice to show the user which movie to watch
   $('#changingText').text('Watch: ' + movieTitle)
   choices.removeClass('choice')
   $(randomChoice).addClass('choice')
